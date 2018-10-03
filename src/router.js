@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { Router, Route, Switch, Redirect, routerRedux } from 'dva/router'
 import dynamic from 'dva/dynamic'
 import App from './routes/app'
-import baseRoutes from './routers'
+import { baseRoutes } from './routers'
 
 const { ConnectedRouter } = routerRedux
 
