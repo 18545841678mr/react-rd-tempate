@@ -9,6 +9,10 @@ import Error from './error'
 
 class App extends Component {
 
+    render() {
+        return (<div></div>)
+    }
+
 }
 
 export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App))
