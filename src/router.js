@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { Switch, Route, Redirect, routerRedux } from 'dva/router'
+import { Router, Route, Switch, Redirect, routerRedux } from 'dva/router'
 import dynamic from 'dva/dynamic'
 import App from './routes/app'
 import baseRoutes from './routers'
 
 const { ConnectedRouter } = routerRedux
 
-function RouterConfig({ history, app }) {
+const RouterConfig = function ({ history, app }) {
   const error = dynamic({
       app,
       component: () => import('./routes/error'),
@@ -44,4 +44,4 @@ RouterConfig.propTypes = {
   app: PropTypes.object,
 }
 
-export default RouterConfig;
+export default RouterConfig

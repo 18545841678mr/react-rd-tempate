@@ -1,0 +1,48 @@
+@import "~themes/vars";
+
+.menuContainer {
+  :global{
+    .ant-menu{
+        background: #434754;
+        color: #fff;
+        a{
+            color: #fff;
+        }
+        .ant-menu-inline .ant-menu-selected:after, .ant-menu-inline .ant-menu-item-selected:after {
+            border-right:none;
+            left:0;
+            top: 6px;
+            height: 30px;
+            width: 3px;
+            background: #FFDC00;
+        }
+    }
+    .ant-menu-submenu-active{
+        background-color:  #26272A;
+        color: #fff;
+    }
+    .ant-menu-item-active{
+        background-color:  #26272A;
+        color: #fff;
+    }
+    .ant-menu-submenu-title:hover {
+        color: #fff;
+     }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background: transparent;
+        a{
+            font-color: #fff;
+        }
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected:before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #fff;
+        opacity: 0.1;
+        left: 0;
+        top: 0;
+    }
+  }
+}

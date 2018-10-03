@@ -6,5 +6,3 @@ export const baseRoutes = [
         component: () => import('./routes/login'),
     }
   ]
-
-export const businessRoutes = []
