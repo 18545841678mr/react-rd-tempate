@@ -1,0 +1,66 @@
+.wrap {
+    margin: 0 auto;
+    .title {
+        margin-top: 70px;
+        text-align: center;
+        h1 {
+            font-size: 34px;
+        }
+        p {
+            color: #000;
+        }
+    }
+    .typeList {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 70%;
+        height: 360px;
+        max-width: 1244px;
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+        li {
+            width: 32%;
+            margin-top: 2%;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            font-size: 16px;
+            cursor: pointer;
+            &:nth-of-type(1) {
+                width: 66%;
+            }
+            img {
+                margin-top: 10%;
+                width: 16%;
+            }
+            p {
+                margin: 20px 0;
+            }
+        }
+        .active {
+            background: #1696f6;
+            color: #fff;
+        }
+    }
+    button {
+        display: block;
+        width: 20%;
+        height: 36px;
+        margin:60px auto 0;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        background: #959fa9;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            background: #1696f6;
+            color: #fff;
+        }
+    }
+}

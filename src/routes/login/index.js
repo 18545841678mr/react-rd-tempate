@@ -26,7 +26,7 @@ class Login extends Component {
     render() {
         return (<div className="styles.login">
             <h1>售前项目管理系统</h1>
-            <form onSubmit="handleSubmit">
+            <form onSubmit={this.handleSubmit}>
                 <label>
                     账户
                     <input type="text" value={this.state.username} onChange={this.handleName}/>
