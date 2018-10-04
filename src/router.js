@@ -12,14 +12,14 @@ const RouterConfig = function ({ history, app }) {
       app,
       component: () => import('./routes/error'),
   })
-
+  console.log('app', app);
   const routes = [].concat(baseRoutes)
 
   return (
     <ConnectedRouter history={history}>
         <App>
             <Switch>
-                <Route exact path="/" render={() => (<Redirect to="/routes/login" />)} />
+                {/* <Route exact path="/" render={() => (<Redirect to="/routes/login" />)} /> */}
                 {
                     routes.map(({ path, ...dynamics }, key) => (
                         <Route key={key}
