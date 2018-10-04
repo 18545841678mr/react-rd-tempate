@@ -1,3 +1,43 @@
 .login{
-    
+    display: flex;
+    color: #333;
+    .leftItem{
+        flex-grow: 1;
+        height: 100vh;
+        background: url('../../assets/mainbanner.png') no-repeat;
+        background-size: auto 100vh;
+    }
+    .rightItem{
+        flex-grow: 1;
+        position: relative;
+        .center{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-70%) translateY(-70%);
+            input{
+                width: 200px;
+                margin-top: 10px;
+                margin-bottom: 15px;
+                padding-left: 4px;
+                height: 30px;
+                line-height: 30px;
+                border-radius: 5px;
+                outline-style: none;
+                border: 0;
+                border: 1px solid #D1D1D1;
+                font-size: 12px;
+            }
+            .button{
+                width: 200px;
+                margin-top: 10px;
+                border-radius: 5px;
+                background: #4876FF;
+                text-align: center;
+                color: #FFFFFF;
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+    }
 }
