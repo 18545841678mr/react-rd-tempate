@@ -20,6 +20,8 @@ const RouterConfig = function ({ history, app }) {
         <App>
             <Switch>
                 <Route exact path="/" render={() => (<Redirect to="/routes/login" />)} />
+                <Route exact path="/" render={() => (<Redirect to="/routes/selecttype" />)} />
+                <Route exact path="/" render={() => (<Redirect to="/components/Header" />)} />
                 {
                     routes.map(({ path, ...dynamics }, key) => (
                         <Route key={key}
