@@ -6,14 +6,20 @@ class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            title: '售前项目管理系统'
+        }
+    }
 
+    componentWillMount(){
+        if(this.props.title) {
+            this.setState({title: this.props.title});
         }
     }
 
     render () {
         return (<div className={ styles.header }>
             <div className={styles.head}>
-                <div className={ styles.leftItem } >售前项目管理系统</div>
+                <div className={ styles.leftItem } >{this.state.title}</div>
                 <div className={ styles.rightItem } >
                     <div className={ styles.website }>官方网站</div>
                     <div className={ styles.demo }>案例库</div>
