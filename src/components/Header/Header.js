@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './Header.less'
-import { Head } from '../Head'
+import Head  from '../Head'
 
 class Header extends Component {
     constructor(props) {

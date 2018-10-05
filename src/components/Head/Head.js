@@ -12,11 +12,13 @@ class Head extends Component {
     render() {
         return (<div className="headTab">
         {
-            processList.map( (item, index) => {
-                <div className={index <= this.props.curIndex ? styles.checked : styles.disChenck} key={'' + index}>{ item }</div>
-                if(this.props.curIndex < processList.length) {
-                    <div className={index <= this.props.curIndex ? styles.next : styles.uncheck}> > </div>
-                }
+            processList.map( (item, index) => { 
+                return (
+                    <div key={index}>
+                        <div className={index <= this.props.curIndex ? styles.checked : styles.disChenck} key={'' + index}>{ item }</div>
+                        {this.props.curIndex < processList.length ? <div className={index <= this.props.curIndex ? styles.next : styles.uncheck}> > </div> : '' }
+                    </div>
+                )
             })
 
         }
