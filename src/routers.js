@@ -14,6 +14,8 @@ export const baseRoutes = [
         path: '/step2',
         models: () => [import('./models/step2')],
         component: () => import('./routes/step2'),
+    },
+    {
         path: '/routes/selectType',
         models: () => [import('./models/selectType')],
         component: () => import('./routes/selecttype'),
