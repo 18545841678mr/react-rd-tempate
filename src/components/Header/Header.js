@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import styles from './index.less'
+import styles from './Header.less'
+import { Head } from '../Head'
 
 class Header extends Component {
     constructor(props) {
@@ -21,9 +22,7 @@ class Header extends Component {
                     <div className={ styles.user } >11111</div>
                 </div>
             </div>
-            <div className={ styles.process }>
-                <div className={ styles.type }>项目类型</div>
-            </div>
+            <Head curIndex={this.props.curIndex}></Head>
         </div>)
     }
 }
