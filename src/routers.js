@@ -14,5 +14,10 @@ export const baseRoutes = [
         path: '/step2',
         models: () => [import('./models/step2')],
         component: () => import('./routes/step2'),
+    },
+    {
+        path: '/final',
+        models: () => [import('./models/final')],
+        component: () => import('./routes/final'),
     }
   ]

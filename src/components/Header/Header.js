@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './Header.less'
-import Head  from '../Head'
+import str from '../../assets/stri.png'
 
 class Header extends Component {
     constructor(props) {
@@ -26,9 +26,9 @@ class Header extends Component {
                     <div className={ styles.order }>个人订单</div>
                     <div className={ styles.line }>|</div>
                     <div className={ styles.user } >11111</div>
+                    <img src={str} alt=""/>
                 </div>
             </div>
-            <Head curIndex={this.props.curIndex}></Head>
         </div>)
     }
 }
