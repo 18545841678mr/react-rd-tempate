@@ -2,5 +2,6 @@
 html, body, :global(#root) {
 	height: 100%;
 	background: #eff2f5;
+	overflow-y: scroll;
 }
 

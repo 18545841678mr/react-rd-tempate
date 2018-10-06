@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'dva'
 import { Input, Button } from 'antd'
 import styles from './index.less'
-import { Header } from '../../components'
+import { Header, Search } from '../../components'
 
 class Final extends Component {
     constructor(props) {
@@ -22,7 +22,8 @@ class Final extends Component {
             colorList: [{color: '红', val: false},
                         {color: '蓝', val: false},
                         {color: '绿', val: false},
-                        {color: '灰', val: false}]
+                        {color: '灰', val: false}],
+            src: ''
         }
         this.selectJob = this.selectJob.bind(this);
     }
@@ -44,6 +45,9 @@ class Final extends Component {
     render () {
         return (
             <div>
+                {
+                    this.state.showSearch ? <Search></Search> : ''
+                }
                 <Header title="案例库"></Header>
                 <div className={ styles.wrap }>
                     <div className={styles.container}>
@@ -89,7 +93,10 @@ class Final extends Component {
                         </div>
                         <div className={ styles.upload }>
                             <label>封面图</label>
-                            {!this.state.hasImage ? <Button>上传</Button> : '' }
+                            {this.state.src.length > 0 ? <Button>上传</Button> : ( <div className={styles.image}>
+                                    <img src={this.state.url} alt=""/>
+                                    <p>删除</p>
+                                </div> ) }
                         </div>
                     </div>
                     <div className={styles.bottomBtn}>

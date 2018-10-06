@@ -1,0 +1,60 @@
+.search{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    .close{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        width: 30px;
+        height: 30px;
+        background: url('../../assets/close.png') no-repeat center;
+        background-size: 100%;
+    }
+    .inputItem{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 60%;       
+        label{
+            display: block;
+        }
+        .container{
+            input{
+                width: 90%;
+                height: 40px;
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid #333;
+                outline:medium;
+                &:focus{
+                    border-bottom: 1px solid #8EE5EE;
+                }
+            }
+            .icon1{
+                position: absolute;
+                top: 30px;
+                right: 90px;
+                width: 15px;
+                height: 15px;
+                background: url('../../assets/search2.png') no-repeat center;
+                background-size: 100%;
+            }
+            .icon2{
+                position: absolute;
+                top: 30px;
+                right: 90px;
+                width: 15px;
+                height: 15px;
+                background: url('../../assets/search1.png') no-repeat center;
+                background-size: 100%;
+            }
+        }
+        
+    }
+}

@@ -21,13 +21,13 @@ export const baseRoutes = [
         component: () => import('./routes/step3'),
     },
     {
-        path: '/components/Header',
-        models: () => [import('./models/Header')],
-        component: () => import('./components/Header'),
-    },
-    {
         path: '/final',
         models: () => [import('./models/final')],
         component: () => import('./routes/final'),
+    },
+    {
+        path: '/library',
+        models: () => [import('./models/library')],
+        component: () => import('./routes/library'),
     }
   ]
