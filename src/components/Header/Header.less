@@ -8,6 +8,14 @@
         .leftItem{
             line-height: 80px;
             font-size: 18px;
+            position: relative;
+            &:before{
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: url('../../assets/logo2.png') no-repeat center;
+
+            }
         }
         .rightItem{
             width: 28vw;
@@ -42,6 +50,12 @@
             }
             .user{
                 color: #436EEE;
+            }
+            img{
+                width: 8px;
+                height: 8px;
+                margin: auto 0;
+                margin-left: -20px;
             }
         }
     }

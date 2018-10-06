@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'dva'
-import { Input, Select } from 'antd'
+import { Input,Select } from 'antd'
+import {Head, Header} from '../../components'
 
 import styles from './index.less'
 
@@ -17,6 +18,8 @@ const Step2 = () => {
     // }
     return (
         <div className={styles.wrap}>
+            <Header></Header>
+            <Head curIndex='1'></Head>
             <div className={styles.form}>
                 <h1 className={styles.title}>基本信息</h1>
                 <div className={styles.topForm}>
@@ -73,8 +76,8 @@ const Step2 = () => {
                     {/* @hack 布局 */}
                     <div className={`${styles.formItem} ${styles.flexHack}`}></div>
                 </div>
+                <button>下一步</button>
             </div>
-            <button>下一步</button>
         </div>
     )
 }

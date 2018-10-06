@@ -6,17 +6,22 @@ class Head extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            curIndex: ''
+            curIndex: 0
         }
     }
+
+    componentWillMount() {
+        this.setState({curIndex: this.props.curIndex});
+    }
+    
     render() {
-        return (<div className="headTab">
+        return (<div className={styles.headTab}>
         {
             processList.map( (item, index) => { 
                 return (
-                    <div key={index}>
-                        <div className={index <= this.props.curIndex ? styles.checked : styles.disChenck} key={'' + index}>{ item }</div>
-                        {this.props.curIndex < processList.length ? <div className={index <= this.props.curIndex ? styles.next : styles.uncheck}> > </div> : '' }
+                    <div className={ styles.list } key={index}>
+                        <div className={index <= this.state.curIndex ? styles['checked' + index] : styles['discheck' + index] } key={'' + index}>{ item }</div>
+                        {index < processList.length-1 ? <div className={index <= this.state.curIndex ? styles.next : styles.uncheck}> > </div> : '' }
                     </div>
                 )
             })

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'dva'
 import styles from './index.less'
+import {Head, Header} from '../../components'
 
 import iconWeb from '../../assets/images/step1/icon-web.png'
 import iconData from '../../assets/images/step1/icon-data.png'
@@ -11,6 +12,8 @@ import iconIdea from '../../assets/images/step1/icon-idea.png'
 const Step1 = () => {
     return (
         <div className={styles.wrap}>
+            <Header></Header>
+            <Head curIndex='0'></Head>
             <div className={styles.title}>
                 <h1>请选择项目类型</h1>
                 <p>请选择项目类型，更好的为您准确评估项目价格</p>
