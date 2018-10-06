@@ -29,5 +29,10 @@ export const baseRoutes = [
         path: '/library',
         models: () => [import('./models/library')],
         component: () => import('./routes/library'),
+    },
+    {
+        path: '/orders',
+        model: () => [import('./models/orders')],
+        component: () => import('./routes/orders'),
     }
   ]

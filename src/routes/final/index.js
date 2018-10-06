@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'dva'
 import { Input, Button } from 'antd'
 import styles from './index.less'
-import { Header, Search } from '../../components'
+import { Header, Search, Icons } from '../../components'
 
 class Final extends Component {
     constructor(props) {
@@ -26,6 +26,8 @@ class Final extends Component {
             src: ''
         }
         this.selectJob = this.selectJob.bind(this);
+        this.showSearch = this.showSearch.bind(this);
+        this.closeSearch = this.closeSearch.bind(this)
     }
 
     selectJob (index, e) {
@@ -42,12 +44,19 @@ class Final extends Component {
         })
     }
 
+    showSearch() {
+        this.setState({showSearch: true})
+    }
+    closeSearch() {
+        this.setState({showSearch: false})
+    }
     render () {
         return (
             <div>
                 {
-                    this.state.showSearch ? <Search></Search> : ''
+                    this.state.showSearch ? <Search closeSearch={this.closeSearch} ></Search> : ''
                 }
+                <Icons showSearch={this.showSearch} add='true' search='true' back='true' ></Icons>
                 <Header title="案例库"></Header>
                 <div className={ styles.wrap }>
                     <div className={styles.container}>
@@ -93,7 +102,7 @@ class Final extends Component {
                         </div>
                         <div className={ styles.upload }>
                             <label>封面图</label>
-                            {this.state.src.length > 0 ? <Button>上传</Button> : ( <div className={styles.image}>
+                            {!this.state.src.length > 0 ? <Button>上传</Button> : ( <div className={styles.image}>
                                     <img src={this.state.url} alt=""/>
                                     <p>删除</p>
                                 </div> ) }

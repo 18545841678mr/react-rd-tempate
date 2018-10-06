@@ -23,10 +23,14 @@ class Search extends Component {
         console.log(this.state.content);
     }
 
+    closeSearch = () => {
+        this.props.closeSearch()
+    }
+
     render() {
         return (
             <div className={styles.search}>
-                <div className={styles.close}></div>
+                <div className={styles.close} onClick={this.closeSearch}></div>
                 <div className={styles.inputItem}>
                     <label>Search</label>
                     <div className={styles.container}  >
