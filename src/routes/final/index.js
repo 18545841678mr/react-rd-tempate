@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'dva'
-import { Input, Button } from 'antd'
+import { Input, Button, Upload } from 'antd'
 import styles from './index.less'
 import { Header, Search, Icons } from '../../components'
 
@@ -102,8 +102,8 @@ class Final extends Component {
                         </div>
                         <div className={ styles.upload }>
                             <label>封面图</label>
-                            {!this.state.src.length > 0 ? <Button>上传</Button> : ( <div className={styles.image}>
-                                    <img src={this.state.url} alt=""/>
+                            {!this.state.src.length > 0 ? (<Upload style={{display: 'block', marginTop: '15px', color: '#fff', background: '#1696f6', width: '80px', textAlign: 'center', borderRadius: '3px'}} >上传</Upload>) : ( <div className={styles.image}>
+                                    <img src={this.state.url} alt="111"/>
                                     <p>删除</p>
                                 </div> ) }
                         </div>
