@@ -2,12 +2,72 @@
     width: 70%;
     margin: 0 auto;
     .design, .frame {
+        margin-top: 40px;
+        border-radius: 10px;
+        background: #fff;
         .formHeader {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        
+            padding-left: 20px;
+            height: 60px;
+            line-height: 60px;
             border-bottom: 1px solid #e9e9e9;
+            font-size: 16px;
+        }
+        .formTop {
+            padding: 20px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9e9e9;
+            .formItem {
+                width: 50%;
+                margin: 10px 0;
+                &>label {
+                    display: block;
+                    padding: 10px 0;
+                    font-weight: bold;
+                }
+                .inputGroup {
+                    display: flex;
+                    justify-content: space-between;
+                    .selectInput {
+                        flex-grow: 2;
+                        margin-left: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .colorGroup {
+                        flex-grow: 2;
+                        input {
+                            margin-left: 10px;
+                        }
+                    }
+                    .uploadGroup {
+                        flex-grow: 2;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+        .formBottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px 30px 30px;
+            .formItem {
+                width: 30%;
+                margin-top: 20px;
+                label {
+                    display: block;
+                    padding: 6px 0;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
