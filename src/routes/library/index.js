@@ -8,6 +8,7 @@ class Library extends Component {
         super(props)
         this.state = {
             showSearch: false,
+            colorList: ['all', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
             jobList: [{text: '全部', flag: true},
                         {text: '计算机服务和软件', flag: false},
                         {text: '贸易和零售', flag: false},
@@ -74,7 +75,15 @@ class Library extends Component {
                 <Header title='案例库'></Header>
                 <Icons showSearch={this.showSearch} add='true' search='true' back='true' ></Icons>
                 <div className={styles.selectTab}>
-                    <div className={ styles.colors } ></div>
+                    <div className={ styles.colors } >
+                    {
+                        this.state.colorList.map( (item, index) => {
+                            return (
+                                <div className={styles['color'+index]} key={index} ></div>
+                            )
+                        })
+                    }
+                    </div>
                     <div className={ styles.jobs } >
                     {
                         this.state.jobList.map( (item, index) => {
