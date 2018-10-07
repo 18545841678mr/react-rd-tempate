@@ -8,7 +8,11 @@ class Orders extends Component {
         super(props)
         this.state = {
             showSearch: false,
-            orderList: [{name: '售前项目管理系统', buildTime: '180108', changeTime: '180108', customer: '马洪彪', tel: '13011825913', price: '5000', flag: true, }]
+            orderList: [{name: '售前项目管理系统', buildTime: '180108', changeTime: '180108', customer: '马洪彪', tel: '13011825913', price: '5000', flag: true, },
+                        {name: '售前项目管理系统', buildTime: '180108', changeTime: '180108', customer: '马洪彪', tel: '13011825913', price: '5000', flag: false, },
+                        {name: '售前项目管理系统', buildTime: '180108', changeTime: '180108', customer: '马洪彪', tel: '13011825913', price: '5000', flag: false, },
+                        {name: '售前项目管理系统', buildTime: '180108', changeTime: '180108', customer: '马洪彪', tel: '13011825913', price: '5000', flag: false, },
+                        {name: '售前项目管理系统', buildTime: '180108', changeTime: '180108', customer: '马洪彪', tel: '13011825913', price: '5000', flag: true, }]
         }
 
         this.showSearch = this.showSearch.bind(this);
@@ -29,6 +33,14 @@ class Orders extends Component {
                     this.state.showSearch ? <Search closeSearch={this.closeSearch} ></Search> : ''
                 }
                 <Header title='马洪彪的订单'></Header>
+                <div className={styles.orderTab}>
+                    <div className={styles.orderState}>
+                        签约状态
+                    </div>
+                    <div className={styles.orderPrice}>
+                        订单金额
+                    </div>
+                </div>
                 <Icons showSearch={this.showSearch} search='true' back='true' ></Icons>
                 <div className={ styles.orderItem }>
                     <div className={ styles.title }>
@@ -56,7 +68,7 @@ class Orders extends Component {
                                     <div>{item.price}</div>
                                     <div className={item.flag ? styles.signed : styles.signin}>{item.flag ? '已签约' : '签约'}</div>
                                     <div className={styles.todo}>
-                                        <div className={styles.icon1}></div>
+                                        <div className={styles.pdf}></div>
                                         <div className={styles.edit}></div>
                                         <div className={styles.delete}></div>
                                     </div>
@@ -64,6 +76,13 @@ class Orders extends Component {
                             )
                         })
                     }
+                    </div>
+
+                    <div className={styles.pageItem}>
+                        每页 <select>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select> 条记录
                     </div>
                 </div>
                
