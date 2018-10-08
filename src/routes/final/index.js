@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'dva'
-import { Input, Button, Upload } from 'antd'
+import { Input, Button, Upload, Modal, Icon } from 'antd'
 import styles from './index.less'
 import { Header, Search, Icons } from '../../components'
 
@@ -23,7 +23,10 @@ class Final extends Component {
                         {color: '蓝', val: false},
                         {color: '绿', val: false},
                         {color: '灰', val: false}],
-            src: ''
+            src: '',
+            previewVisible: false,
+            previewImage: '',
+            fileList: [],
         }
         this.selectJob = this.selectJob.bind(this);
         this.showSearch = this.showSearch.bind(this);
@@ -44,6 +47,17 @@ class Final extends Component {
         })
     }
 
+    handleCancel = () => this.setState({ previewVisible: false })
+
+    handlePreview = (file) => {
+        this.setState({
+        previewImage: file.url || file.thumbUrl,
+        previewVisible: true,
+        });
+    }
+
+    handleChange = ({ fileList }) => this.setState({ fileList })
+
     showSearch() {
         this.setState({showSearch: true})
     }
@@ -51,6 +65,14 @@ class Final extends Component {
         this.setState({showSearch: false})
     }
     render () {
+
+        const { previewVisible, previewImage, fileList } = this.state;
+        const uploadButton = (
+        <div>
+            <Icon type="plus" />
+            <div className="ant-upload-text">Upload</div>
+        </div>
+        );
         return (
             <div>
                 {
@@ -102,10 +124,18 @@ class Final extends Component {
                         </div>
                         <div className={ styles.upload }>
                             <label>封面图</label>
-                            {!this.state.src.length > 0 ? (<Upload style={{display: 'block', marginTop: '15px', color: '#fff', background: '#1696f6', width: '80px', textAlign: 'center', borderRadius: '3px'}} >上传</Upload>) : ( <div className={styles.image}>
-                                    <img src={this.state.url} alt="111"/>
-                                    <p>删除</p>
-                                </div> ) }
+                            <Upload
+                                action="//jsonplaceholder.typicode.com/posts/"
+                                listType="picture-card"
+                                fileList={fileList}
+                                onPreview={this.handlePreview}
+                                onChange={this.handleChange}
+                            >
+                                {fileList.length >= 1 ? null : uploadButton}
+                            </Upload>
+                            <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+                                <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                            </Modal>
                         </div>
                     </div>
                     <div className={styles.bottomBtn}>
