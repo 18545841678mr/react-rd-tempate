@@ -4,6 +4,8 @@ import Header from './Header'
 import Search from './Search'
 import Icons from './Icons'
 import PageButton from './PageButton'
+import LeftItem from './LeftItem'
+
 
 
 
@@ -12,5 +14,6 @@ export {
     Header,
     Search,
     Icons,
-    PageButton
+    PageButton,
+    LeftItem
 }

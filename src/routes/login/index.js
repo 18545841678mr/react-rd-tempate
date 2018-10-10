@@ -16,6 +16,9 @@ class Login extends Component {
     }
     handleSubmit () {
         console.log(this.state.username, "&&&&&&&&&", this.state.password);
+        console.log(this.context)
+        this.props.history.push('/step1');
+        
     }
     handleName (e) {
         this.setState({username: e.target.value});
