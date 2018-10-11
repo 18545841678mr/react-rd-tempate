@@ -21,7 +21,7 @@ class Step5 extends Component {
         return (
             <div className={styles.wrap}>
                 <Header></Header>
-                <Head curIndex='5'></Head>
+                <Head curIndex='4'></Head>
                 <div className={styles.container} >
                     <div className={styles.priceItem} >
                         <h3>整体报价</h3>

@@ -13,12 +13,43 @@ class Step1 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            typeList: [{text: 'WEB网站', flag: false, index: 0, src1: iconWeb},
+                {text: '整合营销', flag: false, index: 1, src1: iconData },
+                {text: 'H5微传单', flag: false, index: 2, src1: iconH5},
+                {text: '增值服务', flag: false, index: 3, src1: iconMore},
+                {text: '网站策划', flag: false, index: 4, src1: iconIdea}],
+            typeArr: [],
         }
+
+        this.selectType = this.selectType.bind(this);
     }
 
     next = () => {
-        this.props.history.push('/step2');
+        console.log(this.state.typeArr);
+        // this.props.history.push('/step2');
+    }
+
+    selectType (index, e) {
+        let typeList = this.state.typeList;
+        console.log(typeList,index)
+        let typeArr = this.state.typeArr;
+        for (let i = 0; i < typeList.length; i ++ ) {
+            if( i === index ) {
+                typeList[i].flag  = !typeList[i].flag;
+                console.log(typeList[i].flag)
+                if (typeList[i].flag) {
+                    typeArr.push(i);
+                } else {
+                    typeArr.splice(typeList[i].index.indexOf(typeArr), 1);
+                }
+            }
+        }
+
+        this.setState({
+            typeArr,
+            typeList
+        })
+
     }
 
     render() {
@@ -32,26 +63,16 @@ class Step1 extends Component {
                     <p>请选择项目类型，更好的为您准确评估项目价格</p>
                 </div>
                 <ul className={styles.typeList}>
-                    <li>
-                        <img src={iconWeb}/>
-                        <p>WEB网站</p>
-                    </li>
-                    <li>
-                        <img src={iconData}/>
-                        <p>整合营销</p>
-                    </li>
-                    <li>
-                        <img src={iconH5}/>
-                        <p>H5微传单</p>
-                    </li>
-                    <li>
-                        <img src={iconMore}/>
-                        <p>增值服务</p>
-                    </li>
-                    <li>
-                        <img src={iconIdea}/>
-                        <p>网站策划</p>
-                    </li>
+                {
+                    this.state.typeList.map( (item, index) => {
+                        return (
+                            <li onClick={ (e) => this.selectType(index, e) } key={index}>
+                                <img  src={!item.flag ? item.src1 : item.src2} />
+                                <p>{item.text}</p>
+                            </li>
+                        )
+                    })
+                }
                 </ul>
                 <button onClick={ this.next }>下一步</button>
             </div>
