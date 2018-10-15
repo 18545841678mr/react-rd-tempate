@@ -56,7 +56,7 @@ const Step3 = () => {
                                     <Radio value={false}>无VI</Radio>
                                 </RadioGroup>
                                 <div className={styles.uploadGroup}>
-                                    <Input />
+                                    <Input placeholder="请输入参考网站网址，如有多个网站请用顿号隔开" />
                                     <Upload style={{'marginLeft': 10}}>
                                         <img src={iconCamera}/>
                                     </Upload>

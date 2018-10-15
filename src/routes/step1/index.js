@@ -25,8 +25,9 @@ class Step1 extends Component {
     }
 
     next = () => {
-        console.log(this.state.typeArr);
-        // this.props.history.push('/step2');
+        // console.log(this.state.typeArr);
+        localStorage.setItem('typeArr', this.state.typeArr)
+        this.props.history.push('/step2');
     }
 
     selectType (index, e) {
@@ -40,7 +41,7 @@ class Step1 extends Component {
                 if (typeList[i].flag) {
                     typeArr.push(i);
                 } else {
-                    typeArr.splice(typeList[i].index.indexOf(typeArr), 1);
+                    typeArr.splice(typeArr.indexOf(typeList[i].index), 1);
                 }
             }
         }
@@ -66,8 +67,8 @@ class Step1 extends Component {
                 {
                     this.state.typeList.map( (item, index) => {
                         return (
-                            <li onClick={ (e) => this.selectType(index, e) } key={index}>
-                                <img  src={!item.flag ? item.src1 : item.src2} />
+                            <li style={!item.flag ? {} : {background: '#1696f6', color: '#fff'}} onClick={ (e) => this.selectType(index, e) } key={index}>
+                                <img  src={item.src1} />
                                 <p>{item.text}</p>
                             </li>
                         )
